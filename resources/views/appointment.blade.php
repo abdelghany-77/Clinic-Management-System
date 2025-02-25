@@ -72,7 +72,7 @@
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3">
     <a href="#" class="navbar-brand d-flex align-items-center">
       <h1 class="m-0 text-primary">
-        <i class="fa fa-tooth me-2"></i>DentCare
+        <i class="fa fa-tooth me-2"></i> SmileCare
       </h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
