@@ -28,7 +28,7 @@ A **full-featured Clinic Management System** built using **Laravel** that enable
 ![cli1](https://github.com/user-attachments/assets/a9d97f0e-cb6d-4db9-8c2e-3a8a1f5a738b)
 
 ### 📅 **Appointment Booking**
-![cli5](https://github.com/user-attachments/assets/0530eff3-bcb5-4891-bf8d-9054f36cc894)
+![cli5](https://github.com/user-attachments/assets/819f3459-496b-4c7f-9f0a-5857e4b1fb90)
 
 ### 📩 **Messages Section**
 ![cli11](https://github.com/user-attachments/assets/db28eac1-33d8-475f-880d-1a1354243796)
