@@ -12,7 +12,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // authorization routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::middleware('auth:admin')->post('/logout', [AuthController::class, 'logout'])->name('logout');
 //appointment routes
 Route::get('/appointment', [AppointmentController::class, 'create'])->name('appointment');
 Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');

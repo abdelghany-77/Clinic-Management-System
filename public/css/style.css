@@ -36,8 +36,8 @@ h6,
 }
 
 .btn-primary:hover {
-    background: var(--secondary);
-    border-color: var(--secondary);
+    background: #06A3DA;
+    border-color: #06A3DA;
 }
 
 .btn-secondary:hover {
@@ -182,7 +182,7 @@ h6,
     height: 3px;
     right: -75px;
     bottom: 11px;
-    background: var(--secondary);
+    background: var(--dark);
 }
 
 .twentytwenty-wrapper {
@@ -276,7 +276,7 @@ h6,
 
 .price-carousel .owl-nav .owl-prev:hover,
 .price-carousel .owl-nav .owl-next:hover {
-    background: var(--secondary);
+    background: var(--dark);
 }
 
 .bg-testimonial {
@@ -316,7 +316,7 @@ h6,
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--secondary);
+    background: var(--dark);
 }
 
 .testimonial-carousel .owl-item img {

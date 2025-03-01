@@ -70,9 +70,9 @@
 
   <!-- Navbar Start -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3">
-    <a href="#" class="navbar-brand d-flex align-items-center">
+    <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
       <h1 class="m-0 text-primary">
-        <i class="fa fa-tooth me-2"></i> SmileCare
+        <i class="fa fa-tooth me-2"></i>SmileCare
       </h1>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -133,14 +133,13 @@
                 <div class="col-12 col-sm-6">
                   <input type="tel" name="phone" class="form-control border-0 px-4 py-3"
                     placeholder="Your Phone Number" required style="height: 55px;"
-                    pattern="^(010|011|012|015)[0-9]{8}$"
                     title="Enter a valid Egyptian phone number (e.g., 01012345678)">
                 </div>
                 <div class="col-12 col-sm-6">
                   <input type="number" name="age" class="form-control border-0 px-4 py-3"
                     placeholder="Your Age" min="1" max="80" required style="height: 55px;">
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                   <input type="datetime-local" name="appointment_date" class="form-control border-0 px-4 py-3"
                     required style="height: 55px;">
                 </div>
@@ -161,71 +160,6 @@
     </div>
   </div>
   <!-- Appointment End -->
-
-  <!-- Contact Start -->
-  <div id="contact" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-      <div class="row g-5">
-        <!-- Contact Information -->
-        <div class="col-xl-6 col-lg-6 wow slideInUp" data-wow-delay="0.1s">
-          <div class="bg-light rounded shadow h-100 p-5">
-            <div class="section-title">
-              <h5 class="position-relative d-inline-block text-primary text-uppercase">Contact Us</h5>
-              <h1 class="display-6 mb-4">Feel Free To Contact Us</h1>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
-              <div class="text-start">
-                <h5 class="mb-0">Our Office</h5>
-                <span>123 Street, Cairo, Egypt</span>
-              </div>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
-              <div class="text-start">
-                <h5 class="mb-0">Email Us</h5>
-                <a href="mailto:dentcare@gmail.com" class="text-dark">dentcare@gmail.com</a>
-              </div>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-              <div class="text-start">
-                <h5 class="mb-0">Call Us</h5>
-                <a href="tel:+0123456789" class="text-dark">+012 345 6789</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-xl-6 col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-          <form>
-            <div class="row g-3">
-              <div class="col-12">
-                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" required
-                  style="height: 55px;">
-              </div>
-              <div class="col-12">
-                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" required
-                  style="height: 55px;">
-              </div>
-              <div class="col-12">
-                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" required
-                  style="height: 55px;">
-              </div>
-              <div class="col-12">
-                <textarea class="form-control border-0 bg-light px-4 py-3" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="col-12">
-                <button class="btn btn-primary w-100 py-3 rounded-pill shadow" type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Contact End -->
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s">
@@ -286,8 +220,9 @@
   <!-- Footer End -->
 
   <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i
-      class="bi bi-arrow-up"></i></a></a>
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+      class="bi bi-arrow-up"></i>
+  </a>
   <!-- JavaScript Libraries -->
   <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
   <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js') }}"></script>

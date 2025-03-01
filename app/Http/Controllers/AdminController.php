@@ -14,22 +14,15 @@ class AdminController extends Controller
 
     public function index(Request $request)
     {
-        $query = Appointment::with('patient');
-
-        // Check if a search query is provided
+        $query = Appointment::with('patient')->orderBy('appointment_date', 'asc');
         if ($request->has('search')) {
             $search = $request->input('search');
-
-            // Search by name or phone number
             $query->where('name', 'LIKE', "%$search%")
-            ->orWhere('phone', 'LIKE', "%$search%");
+                ->orWhere('phone', 'LIKE', "%$search%");
         }
-
         $appointments = $query->get();
-
         return view('admin.dashboard', compact('appointments'));
     }
-
 
     public function showPatient($id)
     {
@@ -37,39 +30,42 @@ class AdminController extends Controller
         return view('admin.patient.show', compact('patient'));
     }
 
-
     // Show edit form
     public function edit($id)
     {
+        $appointment = Appointment::findOrFail($id);
         $patient = Patient::where('appointment_id', $id)->first();
         if (!$patient) {
-            $appointment = Appointment::findOrFail($id);
             $patient = Patient::create([
                 'appointment_id' => $appointment->id,
                 'medicine' => '',
                 'doctor_notes' => '',
             ]);
         }
-        return view('admin.patient.update', compact('patient'));
+        return view('admin.patient.update', compact('appointment', 'patient'));
     }
 
-    // Update patient details
     public function update(Request $request, $id)
     {
         $request->validate([
             'health_condition' => 'string',
+            'appointment_date' => 'required|date|after:today',
             'medicine' => 'required|string',
             'doctor_notes' => 'required|string',
         ]);
-
-
+        // Update patient details
         $patient = Patient::findOrFail($id);
         $patient->update([
             'medicine' => $request->medicine,
             'doctor_notes' => $request->doctor_notes,
         ]);
-
-        return redirect()->route('admin.dashboard')->with('success', 'Patient details updated successfully!');
+        // Update appointment details
+        $appointment = Appointment::findOrFail($patient->appointment_id);
+        $appointment->update([
+            'health_condition' => $request->health_condition,
+            'appointment_date' => $request->appointment_date,
+        ]);
+        return redirect()->route('admin.dashboard')->with('success', 'Patient and appointment details updated successfully!');
     }
 
     // Delete appointment

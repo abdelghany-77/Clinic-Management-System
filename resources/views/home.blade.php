@@ -81,55 +81,56 @@
   </div>
   <!-- Topbar End -->
 
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-5 py-3">
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3 py-lg-0 sticky-top">
     <div class="container">
-      <!-- Brand Logo -->
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <h1 class="m-0 text-primary">
-          <i class="fa fa-tooth me-2"></i> SmileCare
-        </h1>
-      </a>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a href="#hero-carousel" class="nav-link active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#aboutus" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#services" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#pricing" class="nav-link">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a href="#team" class="nav-link">Our Team</a>
-          </li>
-          <li class="nav-item">
-            <a href="#advice" class="nav-link">Dental Tips</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-
-        <!-- Appointment Button -->
-        <a href="{{ route('appointment') }}" class="btn btn-primary rounded-pill py-2 px-4 ms-3">
-          Book Appointment
+        <!-- Brand Logo -->
+        <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
+            <h1 class="m-0 text-primary fw-bold">
+                <i class="fa fa-tooth me-2"></i>SmileCare
+            </h1>
         </a>
-      </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto py-3 py-lg-0">
+                <li class="nav-item">
+                    <a href="{{ route('home') }}"
+                       class="nav-link {{ request()->routeIs('home') ? 'active fw-semibold' : '' }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#aboutus" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advice" class="nav-link">Dental Tips</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <a href="{{ route('appointment') }}"
+               class="btn btn-primary rounded-pill py-2 px-4 ms-lg-3 fw-medium d-block d-lg-inline-block mt-3 mt-lg-0">
+                Book Appointment
+            </a>
+        </div>
     </div>
-  </nav>
-  <!-- Navbar End -->
+</nav>
+<!-- Navbar End -->
 
 
   <!-- Carousel Start -->
@@ -162,7 +163,7 @@
           <img class="w-100" src="img/carousel-2.jpg" alt="Modern Dental Solutions">
           <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
             <div class="text-center p-3" style="max-width: 850px;">
-              <h5 class="text-uppercase mb-3 animated fadeInDown">Confidence Starts with a Bright Smile</h5>
+              <h5 class="text-uppercase mb-3 animated fadeInDown text-white">Confidence Starts with a Bright Smile</h5>
               <h1 class="display-2 fw-bold text-white mb-4 animated fadeInUp">
                 Advanced & Gentle Dental Care Solutions
               </h1>
