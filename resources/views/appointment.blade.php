@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>@yield('title', 'DentCare - Dental Clinic')</title>
+  <title>@yield('title', 'SmileCare - Dental Clinic')</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <!-- Favicon -->
   <link href="{{ asset('img/favicon.ico') }}" rel="icon" />
@@ -28,7 +28,7 @@
 
 <body>
   <!-- Spinner Start -->
-  <div id="spinner"
+  {{-- <div id="spinner"
     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary m-1" role="status">
       <span class="sr-only">Loading...</span>
@@ -39,7 +39,7 @@
     <div class="spinner-grow text-secondary m-1" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div>
+  </div> --}}
   <!-- Spinner End -->
 
   <!-- Topbar Start -->

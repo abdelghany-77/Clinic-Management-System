@@ -41,7 +41,7 @@
   --}}
 
   <!-- Spinner Start -->
-  <div id="spinner"
+  {{-- <div id="spinner"
     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary m-1" role="status">
       <span class="sr-only">Loading...</span>
@@ -52,28 +52,29 @@
     <div class="spinner-grow text-secondary m-1" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div>
+  </div> --}}
   <!-- Spinner End -->
 
   <!-- Topbar Start -->
-  <div class="container-fluid bg-light px-5 d-none d-lg-block">
+  <div class="container-fluid bg-light px-4 py-2 d-none d-lg-block shadow-sm">
     <div class="row gx-0 align-items-center">
       <div class="col-md-6 text-center text-lg-start">
-        <small class="py-2 d-inline-flex align-items-center">
+        <small class="d-inline-flex align-items-center py-2">
           <i class="far fa-clock text-primary me-2"></i>
-          <strong>Opening Hours: </strong> Sat - Thu: 6:00 AM - 11:00 PM | <span class="text-danger">Friday
-            Closed</span>
+          <strong class="fw-semibold">Opening Hours:</strong>
+          <span class="ms-1">Sat - Thu: 6:00 AM - 11:00 PM |</span>
+          <span class="text-danger ms-1">Friday Closed</span>
         </small>
       </div>
       <div class="col-md-6 text-center text-lg-end">
-        <div class="d-inline-flex align-items-center bg-primary text-white rounded px-4 py-2">
+        <div class="d-inline-flex align-items-center bg-primary text-white rounded-pill px-4 py-2 shadow-sm">
           <div class="me-3 pe-3 border-end">
             <i class="fa fa-envelope-open me-2"></i>
-            <a href="mailto:dentcare@gmail.com" class="text-white">dentcare@gmail.com</a>
+            <a href="mailto:dentcare@gmail.com" class="text-white text-decoration-none">dentcare@gmail.com</a>
           </div>
           <div>
             <i class="fa fa-phone-alt me-2"></i>
-            <a href="tel:+0123456789" class="text-white">+012 345 6789</a>
+            <a href="tel:+0123456789" class="text-white text-decoration-none">+012 345 6789</a>
           </div>
         </div>
       </div>
@@ -81,56 +82,59 @@
   </div>
   <!-- Topbar End -->
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3 py-lg-0 sticky-top">
-    <div class="container">
-        <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
-            <h1 class="m-0 text-primary fw-bold">
-                <i class="fa fa-tooth me-2"></i>SmileCare
-            </h1>
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-3 py-lg-0 sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <!-- Brand Logo on the Left -->
+      <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center me-auto">
+        <h1 class="m-0 text-primary fw-bold">
+          <i class="fa fa-tooth me-2"></i>SmileCare
+        </h1>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links Aligned to the Right -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a href="#" class="nav-link {{ request()->routeIs('home') ? 'active fw-semibold' : '' }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#aboutus" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="#pricing" class="nav-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#team" class="nav-link">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="#advice" class="nav-link">Dental Tips</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Appointment Button -->
+        <a href="{{ route('appointment') }}"
+          class="btn btn-primary rounded-pill py-2 px-4 ms-lg-3 fw-medium d-block d-lg-inline-block mt-3 mt-lg-0 shadow-sm">
+          Book Appointment
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto py-3 py-lg-0">
-                <li class="nav-item">
-                    <a href="{{ route('home') }}"
-                       class="nav-link {{ request()->routeIs('home') ? 'active fw-semibold' : '' }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#aboutus" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pricing" class="nav-link">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#team" class="nav-link">Our Team</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#advice" class="nav-link">Dental Tips</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <a href="{{ route('appointment') }}"
-               class="btn btn-primary rounded-pill py-2 px-4 ms-lg-3 fw-medium d-block d-lg-inline-block mt-3 mt-lg-0">
-                Book Appointment
-            </a>
-        </div>
+      </div>
     </div>
-</nav>
-<!-- Navbar End -->
+  </nav>
+  <!-- Navbar End -->
+
 
 
   <!-- Carousel Start -->
@@ -198,35 +202,39 @@
       <div class="row gx-4">
         <!-- Opening Hours Section -->
         <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-          <div class="bg-primary d-flex flex-column p-5 rounded shadow" style="height: 100%;">
-            <h3 class="text-white mb-4"><i class="far fa-clock me-2"></i> Opening Hours</h3>
-            <div class="d-flex justify-content-between text-white mb-3">
-              <h6 class="text-white mb-0">Saturday - Thursday</h6>
-              <p class="mb-0">6:00 AM - 11:00 PM</p>
-            </div>
-            <div class="d-flex justify-content-between text-white mb-3">
-              <h6 class="text-white mb-0">Saturday</h6>
-              <p class="mb-0">8:00 AM - 9:00 PM</p>
-            </div>
-            <div class="d-flex justify-content-between text-white">
-              <h6 class="text-white mb-0">Sunday</h6>
-              <p class="mb-0">8:00 AM - 9:00 PM</p>
-            </div>
+          <div class="bg-primary d-flex flex-column p-5 rounded shadow h-100">
+            <h3 class="text-white mb-4">
+              <i class="far fa-clock fa-2x me-2"></i> Opening Hours
+            </h3>
+            <ul class="list-unstyled text-white">
+              <li class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Saturday - Thursday</span>
+                <span>6:00 AM - 11:00 PM</span>
+              </li>
+              <li class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Saturday</span>
+                <span>8:00 AM - 9:00 PM</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <span class="fw-bold">Sunday</span>
+                <span>8:00 AM - 9:00 PM</span>
+              </li>
+            </ul>
           </div>
         </div>
 
         <!-- Appointment Section -->
         <div class="col-lg-6 wow zoomIn" data-wow-delay="0.6s">
-          <div class="bg-secondary d-flex flex-column p-5 rounded shadow" style="height: 100%;">
-            <h3 class="text-white mb-4"><i class="fa fa-calendar-check me-2"></i> Make an Appointment</h3>
-            <p class="text-white">
+          <div class="bg-dark d-flex flex-column p-5 rounded shadow h-100">
+            <h3 class="text-white mb-4">
+              <i class="fa fa-calendar-check fa-2x me-2"></i> Make an Appointment
+            </h3>
+            <p class="text-white mb-4">
               Get expert dental care with our highly trained professionals. Book your appointment today!
             </p>
-            <h2 class="text-white mb-0">
-              <a href="tel:+0123456789" class="text-white text-decoration-none fw-bold hover-effect">
-                +012 345 6789
-              </a>
-            </h2>
+            <a href="tel:+0123456789" class="btn btn-light text-primary fw-bold py-3 px-4 rounded-pill btn-lg">
+              Call Now: +012 345 6789
+            </a>
           </div>
         </div>
       </div>
@@ -293,7 +301,7 @@
   <!-- About End -->
 
   <!-- Service Start -->
-  <div id="service" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div id="services" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
       <div class="row g-5 mb-5">
         <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s" style="min-height: 400px">
@@ -353,15 +361,15 @@
           </div>
         </div>
         <div class="col-lg-5 service-item wow zoomIn" data-wow-delay="0.9s">
-          <div
-            class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-4">
-            <h3 class="text-white mb-3">Make Appointment</h3>
-            <p class="text-white mb-3">
-              Clita ipsum magna kasd rebum at ipsum amet dolor justo dolor est
-              magna stet eirmod
-            </p>
-            <h2 class="text-white mb-0">+012 345 6789</h2>
-          </div>
+          <div class="bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5 shadow-sm">
+          <h3 class="text-white mb-4">Make an Appointment</h3>
+          <p class="text-white mb-4">
+            Experience top-notch dental care with our expert team. Book your visit today!
+          </p>
+          <a href="tel:+0123456789" class="btn btn-light btn-lg text-primary fw-semibold py-3 px-5 rounded-pill shadow-sm">
+            +012 345 6789
+          </a>
+        </div>
         </div>
       </div>
     </div>
@@ -398,100 +406,119 @@
   <!-- Pricing Start -->
   <div id="pricing" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
-      <div class="row g-5">
+      <div class="row g-5 align-items-center">
+        <!-- Left Column: Title and Description -->
         <div class="col-lg-5">
-          <div class="section-title mb-4">
-            <h5 class="position-relative d-inline-block text-primary text-uppercase">
-              Pricing Plan
-            </h5>
-            <h1 class="display-5 mb-0">
-              Fair & Affordable Prices for Dental Treatments
-            </h1>
+          <div class="mb-4">
+            <h5 class="text-primary text-uppercase fw-bold mb-3">Pricing Plan</h5>
+            <h2 class="display-5 fw-bold mb-4">Fair & Affordable Prices for Dental Treatments</h2>
           </div>
-          <p class="mb-4">
+          <p class="lead text-muted mb-4">
             Get high-quality dental care at transparent pricing. No hidden fees, just professional treatments with a
             gentle touch.
           </p>
-          <h5 class="text-uppercase text-primary wow fadeInUp" data-wow-delay="0.3s">
-            Call for Appointment
-          </h5>
-          <h1 class="wow fadeInUp" data-wow-delay="0.6s">+012 345 6789</h1>
+          <div class="mb-4">
+            <h5 class="text-primary fw-semibold wow fadeInUp" data-wow-delay="0.3s">Call for Appointment</h5>
+            <h1 class="display-4 text-dark fw-bold wow fadeInUp" data-wow-delay="0.6s">+012 345 6789</h1>
+          </div>
         </div>
+        <!-- Right Column: Pricing Carousel -->
         <div class="col-lg-7">
           <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
-            <div class="price-item pb-4">
+            <!-- Price Item 1: Teeth Whitening -->
+            <div class="price-item pb-4 shadow-sm">
               <div class="position-relative">
-                <img class="img-fluid rounded-top" src="img/price-1.jpg" alt />
-                <div
-                  class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
-                  style="z-index: 2">
-                  <h2 class="text-primary m-0">$35</h2>
-                </div>
+                <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="Teeth Whitening">
               </div>
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Teeth Whitening</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Modern Equipment</span><i class="fa fa-check text-primary pt-1"></i>
+              <div class="text-center bg-light py-5 p-4">
+                <div class="mb-3">
+                  <p class="text-muted text-decoration-line-through mb-0">Was $50</p>
+                  <h2 class="text-primary m-0">Now $35 <span class="badge bg-danger ms-2">Sale</span></h2>
                 </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Professional Dentist</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>24/7 Call Support</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
+                <h4 class="text-primary fw-bold">Teeth Whitening</h4>
+                <hr class="w-50 mx-auto border-primary">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Modern Equipment
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Professional Dentist
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    24/7 Call Support
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                </ul>
                 <a href="{{ route('appointment') }}"
-                  class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                  class="btn btn-primary btn-lg w-100 mt-4 rounded-pill shadow-sm">
+                  Book Appointment
+                </a>
               </div>
             </div>
-            <div class="price-item pb-4">
+            <!-- Price Item 2: Dental Implant -->
+            <div class="price-item pb-4 shadow-sm">
               <div class="position-relative">
-                <img class="img-fluid rounded-top" src="img/price-2.jpg" alt />
-                <div
-                  class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
-                  style="z-index: 2">
-                  <h2 class="text-primary m-0">$49</h2>
-                </div>
+                <img class="img-fluid rounded-top" src="img/price-2.jpg" alt="Dental Implant">
               </div>
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Dental Implant</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Modern Equipment</span><i class="fa fa-check text-primary pt-1"></i>
+              <div class="text-center bg-light py-5 p-4">
+                <div class="mb-3">
+                  <p class="text-muted text-decoration-line-through mb-0">Was $70</p>
+                  <h2 class="text-primary m-0">Now $49 <span class="badge bg-danger ms-2">Sale</span></h2>
                 </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Professional Dentist</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>24/7 Call Support</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
+                <h4 class="text-primary fw-bold">Dental Implant</h4>
+                <hr class="w-50 mx-auto border-primary">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Modern Equipment
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Professional Dentist
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    24/7 Call Support
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                </ul>
                 <a href="{{ route('appointment') }}"
-                  class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                  class="btn btn-primary btn-lg w-100 mt-4 rounded-pill shadow-sm">
+                  Book Appointment
+                </a>
               </div>
             </div>
-            <div class="price-item pb-4">
+            <!-- Price Item 3: Root Canal -->
+            <div class="price-item pb-4 shadow-sm">
               <div class="position-relative">
-                <img class="img-fluid rounded-top" src="img/price-3.jpg" alt />
-                <div
-                  class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
-                  style="z-index: 2">
-                  <h2 class="text-primary m-0">$99</h2>
-                </div>
+                <img class="img-fluid rounded-top" src="img/price-3.jpg" alt="Root Canal">
               </div>
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Root Canal</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Modern Equipment</span><i class="fa fa-check text-primary pt-1"></i>
+              <div class="text-center bg-light py-5 p-4">
+                <div class="mb-3">
+                  <p class="text-muted text-decoration-line-through mb-0">Was $140</p>
+                  <h2 class="text-primary m-0">Now $99 <span class="badge bg-danger ms-2">Sale</span></h2>
                 </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Professional Dentist</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>24/7 Call Support</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
+                <h4 class="text-primary fw-bold">Root Canal</h4>
+                <hr class="w-50 mx-auto border-primary">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Modern Equipment
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Professional Dentist
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    24/7 Call Support
+                    <i class="fa fa-check text-primary"></i>
+                  </li>
+                </ul>
                 <a href="{{ route('appointment') }}"
-                  class="btn btn-primary py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                  class="btn btn-primary btn-lg w-100 mt-4 rounded-pill shadow-sm">
+                  Book Appointment
+                </a>
               </div>
             </div>
           </div>
@@ -610,117 +637,117 @@
   <!-- Team End -->
 
 
-  <!-- Advice -->
-  <div id="advice" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-5">
-          <div class="section-title mb-4">
-            <h5 class="position-relative d-inline-block text-primary text-uppercase">
-              Keep Your Teeth Healthy
-            </h5>
-            <h1 class="display-5 mb-0">
-              Healthy Habits for a Perfect Smile
-            </h1>
-          </div>
-          <p class="mb-4">
-            Follow these simple dental care tips to keep your teeth strong, cavity-free, and your smile bright.
+  <!-- Advice Start -->
+<div id="advice" class="container-fluid py-5 bg-light wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- Left Column: Title and Description -->
+      <div class="col-lg-5">
+        <div class="mb-5">
+          <h5 class="text-primary text-uppercase fw-bold mb-3">Keep Your Teeth Healthy</h5>
+          <h1 class="display-4 fw-bold text-dark mb-4">Healthy Habits for a Perfect Smile</h1>
+          <p class="lead text-muted mb-4">
+            Adopt these simple dental care tips to maintain strong, cavity-free teeth and a radiant smile.
           </p>
+          <a href="#contact" class="btn btn-outline-primary btn-lg py-3 px-5 rounded-pill shadow-sm">
+            Learn More
+          </a>
         </div>
-        <div class="col-lg-7">
-          <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
-
-            <!-- Advice 1: Daily Oral Hygiene -->
-            <div class="price-item pb-4">
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Daily Oral Hygiene</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Brush twice a day</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Floss daily</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>Use fluoride toothpaste</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-              </div>
+      </div>
+      <!-- Right Column: Advice Carousel -->
+      <div class="col-lg-7">
+        <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
+          <!-- Advice 1: Daily Oral Hygiene -->
+          <div class="price-item pb-4 shadow-lg rounded">
+            <div class="bg-white text-center py-5 px-4 border-bottom border-primary">
+              <h4 class="text-primary fw-bold mb-4"><i class="fa fa-tooth fa-x me-2"></i>Daily Oral Hygiene</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Brush twice a day
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Floss daily
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Use fluoride toothpaste
+                </li>
+              </ul>
             </div>
-
-            <!-- Advice 2: Healthy Diet -->
-            <div class="price-item pb-4">
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Healthy Diet</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Limit sugary foods & drinks</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Eat calcium-rich foods</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>Drink plenty of water</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-              </div>
+          </div>
+          <!-- Advice 2: Healthy Diet -->
+          <div class="price-item pb-4 shadow-lg rounded">
+            <div class="bg-white text-center py-5 px-4 border-bottom border-primary">
+              <h4 class="text-primary fw-bold mb-4"><i class="fa fa-apple-alt fa-x me-2"></i>Healthy Diet</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Limit sugary foods & drinks
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Eat calcium-rich foods
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Drink plenty of water
+                </li>
+              </ul>
             </div>
-
-            <!-- Advice 3: Regular Dental Visits -->
-            <div class="price-item pb-4">
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Regular Dental Check-ups</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Visit dentist every 6 months</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Professional cleaning</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>Early detection of dental issues</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-              </div>
+          </div>
+          <!-- Advice 3: Regular Dental Check-ups -->
+          <div class="price-item pb-4 shadow-lg rounded">
+            <div class="bg-white text-center py-5 px-4 border-bottom border-primary">
+              <h4 class="text-primary fw-bold mb-4"><i class="fa fa-calendar-check fa-x me-2"></i>Regular Dental Check-ups</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Visit dentist every 6 months
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Professional cleaning
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Early detection of dental issues
+                </li>
+              </ul>
             </div>
-
-            <!-- Advice 4: Avoid Harmful Habits -->
-            <div class="price-item pb-4">
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Avoid Harmful Habits</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Don't smoke or use tobacco</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Avoid nail-biting & teeth grinding</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>Don't use teeth as tools</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-              </div>
+          </div>
+          <!-- Advice 4: Avoid Harmful Habits -->
+          <div class="price-item pb-4 shadow-lg rounded">
+            <div class="bg-white text-center py-5 px-4 border-bottom border-primary">
+              <h4 class="text-primary fw-bold mb-4"><i class="fa fa-exclamation-triangle fa-x me-2"></i>Avoid Harmful Habits</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Don’t smoke or use tobacco
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Avoid nail-biting & teeth grinding
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Don’t use teeth as tools
+                </li>
+              </ul>
             </div>
-
-            <!-- Advice 5: Use the Right Dental Products -->
-            <div class="price-item pb-4">
-              <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
-                <h4>Use the Right Products</h4>
-                <hr class="text-primary w-50 mx-auto mt-0" />
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Use a soft-bristle toothbrush</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-3">
-                  <span>Replace your brush every 3 months</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-                <div class="d-flex justify-content-between mb-2">
-                  <span>Choose alcohol-free mouthwash</span><i class="fa fa-check text-primary pt-1"></i>
-                </div>
-              </div>
+          </div>
+          <!-- Advice 5: Use the Right Dental Products -->
+          <div class="price-item pb-4 shadow-lg rounded">
+            <div class="bg-white text-center py-5 px-4 border-bottom border-primary">
+              <h4 class="text-primary fw-bold mb-4"><i class="fa fa-tools fa-x me-2"></i>Use the Right Products</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Use a soft-bristle toothbrush
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Replace your brush every 3 months
+                </li>
+                <li class="list-group-item d-flex align-items-center">
+                  <i class="fa fa-check-circle text-primary me-3"></i> Choose alcohol-free mouthwash
+                </li>
+              </ul>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Advice -->
+</div>
+<!-- Advice End -->
 
   <!-- Contact Start -->
   <div id="contact" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
