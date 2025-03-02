@@ -1,66 +1,41 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 Clinic Management System – Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A **full-featured Clinic Management System** built using **Laravel** that enables **doctors** to manage appointments, track patient health conditions, and prescribe medicine. Patients can book appointments easily and send messages to the clinic.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
+✅ **Admin Dashboard** – Manage appointments, patients, and health records  
+✅ **Appointment Booking** – Users can book appointments with name, phone, age, and health condition  
+✅ **Health Condition Tracking** – Doctors can update patient records, add medications & doctor notes  
+✅ **Secure Authentication** – Only **admin (doctor)** can log in and manage clinic data  
+✅ **Contact & Feedback System** – Patients can send messages, and doctors can view them in the dashboard  
+✅ **Responsive UI** – Clean and modern design for easy access on any device  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠 Technologies Used
+- **Backend:** Laravel (PHP)
+- **Frontend:** Blade (Laravel), Bootstrap, HTML, CSS
+- **Authentication:** Laravel Auth Middleware
+- **Database:** MySQL
+- **Deployment:** Laravel Artisan, Apache/Nginx
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📸 Screenshots 
+### ✨ **Home**
+![cli8](https://github.com/user-attachments/assets/16fe145b-ea90-427b-9c25-24af6a6889a1)
+![cli10](https://github.com/user-attachments/assets/75ba48de-6d1c-4e78-9e02-6868ca5cc189)
+![cli9](https://github.com/user-attachments/assets/db9c787e-c279-4913-a165-fa10cf1c1ab1)
+![cli11](https://github.com/user-attachments/assets/b83e8afa-0bfe-4596-bdbd-43db08e15af9)
+![cli12](https://github.com/user-attachments/assets/1d6ada0b-9c4f-45a5-b886-ee779c3c6645)
+### ✨ **Admin Dashboard**
+![cli3](https://github.com/user-attachments/assets/2943d459-fc85-4d88-aa0e-c3fe89128059)
+![cli4](https://github.com/user-attachments/assets/c2b99178-912d-44c8-be3d-f83462b174c8)
+![cli1](https://github.com/user-attachments/assets/5cae9ed7-6203-4a54-a82e-173701f40964)
+![cli2](https://github.com/user-attachments/assets/1b4707ab-6986-4dc9-b082-8d7a195d0be2)
+### 📅 **Appointment Booking**
+![cli5](https://github.com/user-attachments/assets/45f3960d-470a-417f-92f2-f5ab29715e8d)
+![cli6](https://github.com/user-attachments/assets/8119f93d-13ed-4b7b-9abe-1a40482902bf)
+![cli7](https://github.com/user-attachments/assets/f4962fd8-99ff-47c3-973e-2ac82ff5d7e1)
