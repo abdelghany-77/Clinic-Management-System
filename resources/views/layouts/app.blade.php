@@ -411,6 +411,10 @@
                                href="{{ route('admin.dashboard') }}">Patients</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.calendar') ? 'active' : '' }}"
+                               href="{{ route('admin.calendar') }}">Calendar</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('admin.messages') ? 'active' : '' }}"
                                href="{{ route('admin.messages') }}">Feedbacks</a>
                         </li>

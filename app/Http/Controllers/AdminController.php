@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\AppointmentReminder;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Patient;
@@ -76,4 +77,28 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Appointment deleted successfully!');
     }
 
+    public function sendReminders()
+    {
+        $appointments = Appointment::where('appointment_date', '>', now())
+            ->where('appointment_date', '<=', now()->addDay())
+            ->get();
+
+        foreach ($appointments as $appointment) {
+            $appointment->notify(new AppointmentReminder($appointment));
+        }
+
+        return redirect()->back()->with('success', 'Reminders sent successfully!');
+    }
+
+    public function calendar()
+    {
+        $appointments = Appointment::all()->map(function ($appointment) {
+            return [
+                'title' => $appointment->name,
+                'start' => $appointment->appointment_date,
+            ];
+        });
+        return view('admin.calendar', compact('appointments'));
+    }
 }
+

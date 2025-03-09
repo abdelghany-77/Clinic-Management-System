@@ -56,7 +56,6 @@ class AppointmentController extends Controller
 
         // Create the appointment
         Appointment::create($request->all());
-
         return redirect()->route('appointment.thankyou')
             ->with('success', 'Your appointment is booked! Please arrive 15 minutes earlier.');
     }

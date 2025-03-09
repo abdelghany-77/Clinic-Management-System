@@ -17,9 +17,10 @@ Route::middleware('auth:admin')->post('/logout', [AuthController::class, 'logout
 Route::get('/appointment', [AppointmentController::class, 'create'])->name('appointment');
 Route::post('/appointment', [AppointmentController::class, 'store'])->name('appointment.store');
 Route::get('/appointment/thank-you', function () {
-    return view('appointment.thankyou');
-})->name('appointment.thankyou');
+    return view('appointment.thankyou');})->name('appointment.thankyou');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+
 
 // admin routes
 Route::middleware(['auth:admin'])->group(function () {
@@ -29,4 +30,5 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::delete('/admin/patient/{id}', [AdminController::class, 'destroy'])->name('admin.patient.destroy');
     Route::get('/admin/messages', [ContactController::class, 'index'])->name('admin.messages');
     Route::delete('/admin/messages/{id}', [ContactController::class, 'destroy'])->name('admin.messages.destroy');
+    Route::get('/admin/calendar', [AdminController::class, 'calendar'])->name('admin.calendar');
 });
